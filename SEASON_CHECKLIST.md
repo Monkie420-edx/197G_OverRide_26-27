@@ -5,7 +5,7 @@ This document is the working checklist for the 2026-2027 OverRide season.
 ## Repository status
 
 - Main repo: `Monkie420-edx/197G_OverRide_26-27`
-- Old repo kept as `upstream` for reference
+- Previous season repo kept as `upstream` for historical reference
 - Work for this season should happen in this repo unless otherwise noted
 
 ## Before first testing session
@@ -32,7 +32,7 @@ This document is the working checklist for the 2026-2027 OverRide season.
 2. Test small changes individually
 3. Commit stable code after field testing
 4. Push to GitHub when the build is verified
-5. Keep the old PushBack repo as historical reference only
+5. Keep the old season repo as historical reference only
 
 ## Useful commands
 

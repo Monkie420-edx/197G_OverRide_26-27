@@ -2,13 +2,13 @@
 
 **Team 197G's competition code for the 2026-2027 VEX V5 "OverRide" season**
 
-This repository is the new season repo for our 197G robot code. It was migrated from the previous PushBack codebase and kept as a reference in the `upstream` remote.
+This repository is the active season repo for Team 197G. It was migrated from the previous PushBack codebase and kept as a reference in the `upstream` remote.
 
 ## Repository status
 
 - New GitHub repo: `Monkie420-edx/197G_OverRide_26-27`
-- Previous repo kept as `upstream` for reference and comparison
-- Main branch is the student-friendly codebase used for this season
+- Previous season repo kept as `upstream` for reference and comparison
+- Main branch is the current working codebase for this season
 
 ## Current focus
 
@@ -38,9 +38,9 @@ pros terminal
 
 This project includes:
 - 6-motor drivetrain with odometry
-- Intake and scoring system
-- Pneumatic mechanisms
-- Autonomous routines for qualification, elimination, and skills matches
+- intake and scoring system
+- pneumatic mechanisms
+- autonomous routines for qualification, elimination, and skills matches
 - LemLib-based chassis motion control
 
 ## Project structure

@@ -479,4 +479,4 @@ printSensorDebug(FrontDistSensor, RightDistSensor, LeftDistSensor);
 ---
 
 *Document created for Team 197G - Harriton High School*
-*VEX V5 VRC Push Back 2025-2026 Season*
+*VEX V5 VRC OverRide 2026-2027 Season*
