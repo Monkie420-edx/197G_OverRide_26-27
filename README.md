@@ -10,6 +10,10 @@ This repository is the new season repo for our 197G robot code. It was migrated 
 - Previous repo kept as `upstream` for reference and comparison
 - Main branch is the student-friendly codebase used for this season
 
+## Current focus
+
+This repo is intended to be the working season codebase for the 2026-2027 OverRide game. Team members can use the old PushBack code as a reference, but new work should be built around the OverRide robot strategy and current hardware setup.
+
 ## Quick start
 
 ### Prerequisites
