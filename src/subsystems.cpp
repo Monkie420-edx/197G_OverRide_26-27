@@ -1,34 +1,36 @@
 #pragma once
 #include "api.h"
 #include "lemlib/api.hpp"
+#include "pros/distance.h"
 #include "pros/distance.hpp"
 //Our motors used in intaking
 
 
-pros::MotorGroup Winch({-10, 9, -1});
+pros::Motor Winch3(-17);
+pros::Motor Winch2(9);
+pros::Motor Winch1(-1);
+pros::MotorGroup Winch({-17, 9, -1});
 //Our Ai Vision sensor for our Color sort
 
 pros::Distance FrontDistSensor(16);
 pros::Distance RightDistSensor(14);
 pros::Distance LeftDistSensor(15);
 //Pistons for our Wings and our Matchloader
-pros::ADIDigitalOut Wing(3);
-pros::ADIDigitalOut Loader(1);
-pros::ADIDigitalOut MidGoal(2);
 
-
-pros::MotorGroup leftMotors({11, -12, -13});
+pros::adi::DigitalOut Claw(1);
+pros::Distance ClawDist(15);
+pros::MotorGroup leftMotors({-20, -19, -18});
 // right motor group
-pros::MotorGroup rightMotors({-20, 19, 18});
+pros::MotorGroup rightMotors({11, 12, 13});
 
 // Inertial Sensor on port 10
-pros::Imu imu(20);
+pros::Imu imu(16);
 
 // tracking wheels
 // horizontal tracking wheel encoder. Rotation sensor, port 20, not reversed
 // pros::Rotation horizontalEnc(20);
 // vertical tracking wheel encoder. Rotation sensor, port 11, reversed
-pros::Rotation verticalEnc(-10);
+pros::Rotation verticalEnc(14);
 
 // horizontal tracking wheel. 2.75" diameter, 5.75" offset, back of the robot (negative)
 // horizontal tracking wheel. 2.75" diameter, 5.75" offset, back of the robot (negative)
@@ -60,7 +62,7 @@ lemlib::ControllerSettings linearController(5, // proportional gain (kP)
 );
 
 // angular motion controller
-lemlib::ControllerSettings angularController(6.7, // proportional gain (kP)
+lemlib::ControllerSettings angularController(6.0, // proportional gain (kP)
                                              0, // integral gain (kI)
                                              65, // derivative gain (kD)
                                              0, // anti windup

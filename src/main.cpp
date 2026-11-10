@@ -2,12 +2,14 @@
 #include "main.h"
 #include "lemlib/api.hpp" // IWYU pragma: keep
 //#include "pros/abstract motor.hpp"
+#include "pros/abstract_motor.hpp"
+#include "pros/distance.hpp"
 #include "pros/misc.h"
 #include "pros/misc.hpp"
 #include "subsystems.hpp"//Our motors sensors and electronics
 #include "autos.hpp"
 #include "relocalization.hpp"
-#include "subsystems.cpp"
+
 /**
  * Runs initialization code. This occurs as soon as the program is started.
  *
@@ -81,23 +83,17 @@ void autonomous() {
  //ElimsHigh() ;
 //TopGoalQUALS();
 //BottomGoalQUALS();
-//Skills();
+Skills();
 //SAWP();
 //ElimsHigh();
 //ElimsLow();
-FourPush();
+//FourPush();
 //distance();
 }
 ////////
 
 
-enum class AllianceColor {
-    RED,
-    BLUE
-};
-
-AllianceColor teamColor = AllianceColor::RED; //change as needed
-
+ bool clawTrue = false;
 /**
  * Runs in driver control
  */
@@ -113,36 +109,60 @@ void opcontrol() {
         // move the chassis with curvature drive
         chassis.arcade(leftY, rightX);
 
+    double Sens =  ClawDist.get_distance();
+    
+    if (Sens <= 40){
+        Claw.set_value(true);
+        clawTrue = true;
+    }
 
 
+  if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1)){
+  if (clawTrue == false){
+    Claw.set_value(true);
+    clawTrue = true;
+    pros::delay(200);
+  }
+  else if(clawTrue == true){
+    Claw.set_value(false);
+    clawTrue = false;
+    pros::delay(200);
+  }
+    
+//    break; 
+//}   
+
+    //Delay so it doesn't hog resources
+    pros::delay(50);
+
+    // }
+}
 
 
-
-
-if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_Y)){
-
+ if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_Y)){
 
 Relocalization::printSensorDebug(FrontDistSensor, RightDistSensor, LeftDistSensor);
 
-}
+} 
 
-  if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R2)){
-Winch.move(-127);
+    if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R2)){
+    Winch.move(-75);
  }
- 
- if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1)){
-Winch.move(127);
+    else if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1)){
+    Winch.move(127);
  }
-
-
-
+    else {
+    Winch.move(0);
+    Winch1.set_brake_mode(pros::MotorBrake::hold);
+    Winch1.brake();
+    Winch2.set_brake_mode(pros::MotorBrake::hold);
+    Winch2.brake();
+      Winch3.set_brake_mode(pros::MotorBrake::hold);
+    Winch3.brake();
+    }
       
-      
-           
-       
+
         
-    
-
 
 
         // delay to save resources

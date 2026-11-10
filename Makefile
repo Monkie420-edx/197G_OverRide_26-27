@@ -19,6 +19,14 @@ EXTRA_CXXFLAGS=
 # Set to 1 to enable hot/cold linking
 USE_PACKAGE:=1
 
+# Kernel 4.2.1 compiles with --std=gnu++23. Homebrew currently links
+# arm-gcc-bin@10 into /usr/local/bin, and that GCC does not accept gnu++23.
+# Prefer the Arm GCC 13 toolchain when it is installed.
+ARM_GCC13_BIN := $(firstword $(wildcard /opt/homebrew/opt/arm-gcc-bin@13/bin) $(wildcard /usr/local/opt/arm-gcc-bin@13/bin))
+ifneq ($(ARM_GCC13_BIN),)
+export PATH := $(ARM_GCC13_BIN):$(PATH)
+endif
+
 # Add libraries you do not wish to include in the cold image here
 # EXCLUDE_COLD_LIBRARIES:= $(FWDIR)/your_library.a
 EXCLUDE_COLD_LIBRARIES:= 

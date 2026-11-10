@@ -1,7 +1,7 @@
 #pragma once
 
 
-extern void TopGoalQUALS();
+extern void BottomRed();
 extern void BottomGoalQUALS();
 extern void ElimsLow();
 extern void ElimsHigh();

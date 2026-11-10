@@ -1,6 +1,7 @@
 #pragma once
 
 #include "lemlib/chassis/chassis.hpp"
+#include "pros/adi.hpp"
 #include "pros/optical.hpp"
 
 #include "pros/distance.hpp"
@@ -11,14 +12,12 @@ extern pros::v5::Distance RightDistSensor; // Right (Y correction)
 extern pros::v5::Distance LeftDistSensor; // Left (Y correction)
 
 
-
-
-extern pros::ADIDigitalOut Wing;
-extern pros::ADIDigitalOut Loader;
-extern pros::ADIDigitalOut MidGoal;
-
+extern pros::adi::DigitalOut Claw;
+extern pros::Distance ClawDist;
 extern pros::MotorGroup Winch;
-
+extern pros::Motor Winch1;
+extern pros::Motor Winch2;
+extern pros::Motor Winch3;
 extern pros::MotorGroup leftMotors;
 // right motor group
 extern pros::MotorGroup rightMotors;
