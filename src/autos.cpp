@@ -22,16 +22,14 @@ void WinchBrake() {
 }
 
 void Skills() {
-
-
  chassis.setPose(0, -62.5, 180); 
  
  Claw.set_value(true);
   pros::delay(200);
  Winch.move(127);
- pros::delay(200);
+ pros::delay(100);
   Winch.move(0);
-   pros::delay(100);
+   pros::delay(50);
     Winch1.set_brake_mode(pros::MotorBrake::hold);
     Winch1.brake();
     Winch2.set_brake_mode(pros::MotorBrake::hold);
@@ -44,14 +42,11 @@ void Skills() {
  chassis.moveToPoint(0, -48, 1000,{.forwards = false, .minSpeed = 0});
 chassis.turnToHeading(-90, 400);
  Winch.move(127);
-  pros::delay(300);
-  Winch.move(0);
+ pros::delay(300);
 WinchBrake();
  chassis.moveToPoint(20.5, -48, 800,{.forwards = false},false);
-  Winch.move(-127);
- pros::delay(200);
-  Winch.move(0);
-   pros::delay(50);
+  Winch.move(-70);
+ pros::delay(350);
  Claw.set_value(false);
  WinchBrake();
   chassis.moveToPoint(0, -60, 1000);
@@ -61,17 +56,13 @@ WinchBrake();
        pros::delay(300);
  Claw.set_value(true);
   Winch.move(127);
- pros::delay(200);
-  Winch.move(0);
-   pros::delay(100);
+ pros::delay(350);
  WinchBrake();
    chassis.moveToPoint(54, -48, 750);
     chassis.turnToHeading(90, 400);
        chassis.moveToPoint(27.5, -48, 750,{.forwards = false});
-         Winch.move(-127);
- pros::delay(300);
-  Winch.move(0);
-   pros::delay(50);
+         Winch.move(-70);
+ pros::delay(150);
  Claw.set_value(false);
  WinchBrake();
    chassis.moveToPoint(54, -48, 750);
@@ -85,18 +76,16 @@ WinchBrake();
 
 
 
-
-// Our Autonomous for the Top Middle goal during our Qualification matches
-void BottomRed() {
-  
+// This is where the match loaders is facing
+void BottomRed() {  
  chassis.setPose(0, -62.5, 180); 
  
  Claw.set_value(true);
-  pros::delay(200);
+  pros::delay(50);
  Winch.move(127);
- pros::delay(200);
+ pros::delay(100);
   Winch.move(0);
-   pros::delay(100);
+  pros::delay(50);
     Winch1.set_brake_mode(pros::MotorBrake::hold);
     Winch1.brake();
     Winch2.set_brake_mode(pros::MotorBrake::hold);
@@ -110,13 +99,10 @@ void BottomRed() {
 chassis.turnToHeading(90, 400);
  Winch.move(127);
   pros::delay(300);
-  Winch.move(0);
 WinchBrake();
  chassis.moveToPoint(-20.5, -48, 800,{.forwards = false},false);
-  Winch.move(-127);
- pros::delay(300);
-  Winch.move(0);
-   pros::delay(50);
+  Winch.move(-70);
+ pros::delay(350);
  Claw.set_value(false);
  WinchBrake();
   chassis.moveToPoint(0, -48, 1000);

@@ -6,18 +6,22 @@
 
 #include "pros/distance.hpp"
 
-
+// distance sensor resets
 extern pros::v5::Distance FrontDistSensor; // Front (X correction)
 extern pros::v5::Distance RightDistSensor; // Right (Y correction)
 extern pros::v5::Distance LeftDistSensor; // Left (Y correction)
 
-
+// Claw
 extern pros::adi::DigitalOut Claw;
 extern pros::Distance ClawDist;
+
+// Winch motor group
 extern pros::MotorGroup Winch;
 extern pros::Motor Winch1;
 extern pros::Motor Winch2;
 extern pros::Motor Winch3;
+
+// left motor group
 extern pros::MotorGroup leftMotors;
 // right motor group
 extern pros::MotorGroup rightMotors;

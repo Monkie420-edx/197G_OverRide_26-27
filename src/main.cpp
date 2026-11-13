@@ -76,7 +76,6 @@ void autonomous() {
 
 //BottomRed();
 Skills();
-//distance();
 }
 ////////
 
@@ -130,11 +129,12 @@ void opcontrol() {
  if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_Y)){
 
 Relocalization::printSensorDebug(FrontDistSensor, RightDistSensor, LeftDistSensor);
+// printf("Winch Speed: %f\n", Winch1.get_actual_velocity());
 
 } 
 
     if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R2)){
-    Winch.move(-75);
+    Winch.move(-70);
  }
     else if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1)){
     Winch.move(127);
