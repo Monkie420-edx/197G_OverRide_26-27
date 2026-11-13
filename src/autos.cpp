@@ -21,33 +21,6 @@ void WinchBrake() {
       Winch3.brake();
 }
 
-
-
-
-
-void FourPush() {
-
-}
-
-
-
-
-void SAWP() {
-  chassis.setPose(-49.25, -15.75, 180);
- 
-}
-
-
-
-void NewSkills() {
- chassis.setPose(-49.25, 15.75, 0);
- 
-}
-
-
-//-16, -50
-
-
 void Skills() {
 
 
@@ -107,6 +80,7 @@ WinchBrake();
 //chassis.moveToPose(-24, -36, 135, 1000);
 // Claw.set_value(false);
 // I love curves - Ethan
+// lol
 }
 
 
@@ -147,29 +121,5 @@ WinchBrake();
  WinchBrake();
   chassis.moveToPoint(0, -48, 1000);
   chassis.turnToHeading(135, 250);
-
-}
-
-void BottomGoalQUALS() {
-      chassis.setPose(0, -2, 0);
-
-}
-
-// //if other team has solo awp
-// void noAuto() {
-//   chassis.setPose(0, 0, 0);
-//   chassis.moveToPoint(0, 5, 2000, {.maxSpeed = 45});
-// } 
-
-
-
-void ElimsHigh() {
- 
-}
-
-
-void NewFOURTHREE(){
-
-  chassis.setPose(0, -2, 0);
 
 }

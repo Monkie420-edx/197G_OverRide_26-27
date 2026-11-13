@@ -67,11 +67,6 @@ ASSET(example_txt); // '.' replaced with "_" to make c++ happy
 
 
 ///////////
-///////talinn likes men a lot
-
-////////
-
-
 
 
 
@@ -79,15 +74,8 @@ ASSET(example_txt); // '.' replaced with "_" to make c++ happy
 void autonomous() {
     // set chassis pose
 
-//chassis.moveToPoint(0, 3, 2000);
- //ElimsHigh() ;
-//TopGoalQUALS();
-//BottomGoalQUALS();
+//BottomRed();
 Skills();
-//SAWP();
-//ElimsHigh();
-//ElimsLow();
-//FourPush();
 //distance();
 }
 ////////
@@ -157,7 +145,7 @@ Relocalization::printSensorDebug(FrontDistSensor, RightDistSensor, LeftDistSenso
     Winch1.brake();
     Winch2.set_brake_mode(pros::MotorBrake::hold);
     Winch2.brake();
-      Winch3.set_brake_mode(pros::MotorBrake::hold);
+    Winch3.set_brake_mode(pros::MotorBrake::hold);
     Winch3.brake();
     }
       

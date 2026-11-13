@@ -3,22 +3,23 @@
 #include "lemlib/api.hpp"
 #include "pros/distance.h"
 #include "pros/distance.hpp"
-//Our motors used in intaking
 
 
+// winch motors
 pros::Motor Winch3(-17);
 pros::Motor Winch2(9);
 pros::Motor Winch1(-1);
 pros::MotorGroup Winch({-17, 9, -1});
-//Our Ai Vision sensor for our Color sort
 
+// relocalization distance sensors
 pros::Distance FrontDistSensor(16);
 pros::Distance RightDistSensor(14);
 pros::Distance LeftDistSensor(15);
-//Pistons for our Wings and our Matchloader
 
+// claw pistons and distance sensor
 pros::adi::DigitalOut Claw(1);
 pros::Distance ClawDist(15);
+// left motor group
 pros::MotorGroup leftMotors({-20, -19, -18});
 // right motor group
 pros::MotorGroup rightMotors({11, 12, 13});
